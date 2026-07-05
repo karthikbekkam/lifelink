@@ -2,8 +2,78 @@
 
 {% block content %}
 
-<h2 class="mb-4">Needers</h2>
+<div class="container-fluid">
 
-{% include "admin/users.html" %}
+    <h2 class="mb-4">Needers</h2>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover">
+
+                <thead class="table-danger">
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Blood Group</th>
+                        <th>City</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for needer in needers %}
+
+                    <tr>
+
+                        <td>{{ needer.id }}</td>
+
+                        <td>{{ needer.full_name }}</td>
+
+                        <td>{{ needer.email }}</td>
+
+                        <td>{{ needer.phone }}</td>
+
+                        <td>{{ needer.blood_group }}</td>
+
+                        <td>{{ needer.city }}</td>
+
+                        <td>
+
+                            {% if needer.active %}
+
+                                <span class="badge bg-success">
+                                    Active
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger">
+                                    Inactive
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}
