@@ -1,5 +1,7 @@
 import os
 
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
 class Config:
 
     SECRET_KEY = os.getenv(
@@ -8,7 +10,8 @@ class Config:
     )
 
     SQLALCHEMY_DATABASE_URI = os.getenv(
-        "DATABASE_URL"
+        "DATABASE_URL",
+        "sqlite:///" + os.path.join(BASE_DIR, "lifelink.db")
     )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -35,13 +38,13 @@ class Config:
     MAIL_USE_SSL = False
 
     MAIL_USERNAME = os.getenv(
-        "MAIL_USERNAME"
+        "MAIL_USERNAME",
+        "lifelink.bloodconnect@gmail.com"
     )
 
     MAIL_PASSWORD = os.getenv(
-        "MAIL_PASSWORD"
+        "MAIL_PASSWORD",
+        ""
     )
 
-    MAIL_DEFAULT_SENDER = os.getenv(
-        "MAIL_USERNAME"
-    )
+    MAIL_DEFAULT_SENDER = MAIL_USERNAME
