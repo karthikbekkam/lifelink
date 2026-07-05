@@ -2,27 +2,21 @@ import os
 
 class Config:
 
-    # =====================================
-    # Secret Key
-    # =====================================
+    SECRET_KEY = os.getenv(
+        "SECRET_KEY",
+        "LifeLink@2026"
+    )
 
-    SECRET_KEY = "LifeLink@2026"
-
-    # =====================================
-    # Database Configuration
-    # =====================================
-
-    SQLALCHEMY_DATABASE_URI = (
-        "mysql+pymysql://root:ntranna%24567A@localhost/lifelink"
+    SQLALCHEMY_DATABASE_URI = os.getenv(
+        "DATABASE_URL"
     )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    # =====================================
-    # Upload Configuration
-    # =====================================
-
-    UPLOAD_FOLDER = os.path.join("static", "uploads")
+    UPLOAD_FOLDER = os.path.join(
+        "static",
+        "uploads"
+    )
 
     MAX_CONTENT_LENGTH = 5 * 1024 * 1024
 
@@ -32,10 +26,6 @@ class Config:
         "jpeg"
     }
 
-    # =====================================
-    # Gmail SMTP Configuration
-    # =====================================
-
     MAIL_SERVER = "smtp.gmail.com"
 
     MAIL_PORT = 587
@@ -44,8 +34,14 @@ class Config:
 
     MAIL_USE_SSL = False
 
-    MAIL_USERNAME = "lifelink.bloodconnect@gmail.com"
+    MAIL_USERNAME = os.getenv(
+        "MAIL_USERNAME"
+    )
 
-    MAIL_PASSWORD = "tius mzld vona ivoc"
+    MAIL_PASSWORD = os.getenv(
+        "MAIL_PASSWORD"
+    )
 
-    MAIL_DEFAULT_SENDER = "lifelink.bloodconnect@gmail.com"
+    MAIL_DEFAULT_SENDER = os.getenv(
+        "MAIL_USERNAME"
+    )
