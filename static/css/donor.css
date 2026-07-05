@@ -1,0 +1,66 @@
+body{
+
+background:#f4f6f9;
+
+margin:0;
+
+}
+
+.sidebar{
+
+width:260px;
+
+min-height:100vh;
+
+background:#dc3545;
+
+}
+
+.sidebar a{
+
+display:block;
+
+padding:18px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+background:white;
+
+color:#dc3545;
+
+}
+
+.content{
+
+background:#f8f9fa;
+
+}
+.card{
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+
+}
+
+.btn{
+
+    border-radius:30px;
+
+}

@@ -1,0 +1,344 @@
+.hero{
+
+padding:120px 0;
+
+background:#f8f9fa;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+font-weight:700;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin:25px 0;
+
+}
+
+.hero img{
+
+width:100%;
+
+border-radius:25px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+.btn{
+
+border-radius:50px;
+
+padding:15px 35px;
+
+}
+.stats{
+
+    background:#ffffff;
+
+    padding:80px 0;
+
+}
+
+.stats-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.stats-card h2{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+}
+
+.stats-card p{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+.blood-groups{
+
+    background:#f8f9fa;
+
+    padding:80px 0;
+
+}
+
+.blood-card{
+
+    background:white;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    transition:0.4s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+.blood-card:hover{
+
+    background:#dc3545;
+
+    color:white;
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+
+}
+
+.blood-icon{
+
+    font-size:50px;
+
+    margin-bottom:15px;
+
+}
+
+.blood-card h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+}
+
+.blood-card h5{
+
+    color:#666;
+
+}
+
+.blood-card:hover h5{
+
+    color:white;
+
+}
+
+.how-it-works{
+
+    background:#ffffff;
+
+    padding:90px 0;
+
+}
+
+.work-card{
+
+    background:#f8f9fa;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    transition:0.4s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    position:relative;
+
+}
+
+.work-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.step-circle{
+
+    width:50px;
+
+    height:50px;
+
+    background:#dc3545;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    margin:0 auto;
+
+}
+
+.work-card h4{
+
+    margin-top:20px;
+
+    font-weight:700;
+
+}
+
+.work-card p{
+
+    color:#666;
+
+}
+.why-us{
+
+    background:#f8f9fa;
+
+    padding:90px 0;
+
+}
+
+.feature-card{
+
+    background:#ffffff;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    background:#dc3545;
+
+    color:white;
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.feature-card i{
+
+    font-size:50px;
+
+    color:#dc3545;
+
+    margin-bottom:20px;
+
+    transition:.4s;
+
+}
+
+.feature-card:hover i{
+
+    color:white;
+
+    transform:rotate(10deg) scale(1.2);
+
+}
+
+.feature-card h4{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#666;
+
+}
+
+.feature-card:hover p{
+
+    color:white;
+
+}
+.emergency-section{
+
+    padding:90px 0;
+
+    background:linear-gradient(135deg,#dc3545,#b3001b);
+
+    color:white;
+
+}
+
+.emergency-section h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+}
+
+.emergency-section p{
+
+    font-size:20px;
+
+    margin-top:20px;
+
+}
+
+.emergency-btn{
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+}
+
+.emergency-btn:hover{
+
+    transform:scale(1.08);
+
+    background:white;
+
+    color:#dc3545;
+
+}

@@ -1,0 +1,217 @@
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h2 class="fw-bold mb-4">
+
+        <i class="fas fa-chart-line text-danger"></i>
+
+        Admin Dashboard
+
+    </h2>
+
+    <div class="row">
+
+        <!-- Total Users -->
+
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <div class="card shadow border-0 bg-primary text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-users fa-3x mb-3"></i>
+
+                    <h2>{{ total_users }}</h2>
+
+                    <h5>Total Users</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Total Donors -->
+
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <div class="card shadow border-0 bg-success text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-heart fa-3x mb-3"></i>
+
+                    <h2>{{ total_donors }}</h2>
+
+                    <h5>Total Donors</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Total Needers -->
+
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <div class="card shadow border-0 bg-warning text-dark">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-hand-holding-medical fa-3x mb-3"></i>
+
+                    <h2>{{ total_needers }}</h2>
+
+                    <h5>Total Needers</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Total Blood Requests -->
+
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <div class="card shadow border-0 bg-danger text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-tint fa-3x mb-3"></i>
+
+                    <h2>{{ total_requests }}</h2>
+
+                    <h5>Blood Requests</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    Donor Statistics
+    =========================================== -->
+
+    <div class="row">
+
+        <!-- Available Donors -->
+
+        <div class="col-lg-4 mb-4">
+
+            <div class="card shadow border-0 bg-success text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-user-check fa-3x mb-3"></i>
+
+                    <h2>{{ available_donors }}</h2>
+
+                    <h5>Available Donors</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Unavailable Donors -->
+
+        <div class="col-lg-4 mb-4">
+
+            <div class="card shadow border-0 bg-secondary text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-user-times fa-3x mb-3"></i>
+
+                    <h2>{{ unavailable_donors }}</h2>
+
+                    <h5>Unavailable Donors</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Pending Requests -->
+
+        <div class="col-lg-4 mb-4">
+
+            <div class="card shadow border-0 bg-warning text-dark">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-clock fa-3x mb-3"></i>
+
+                    <h2>{{ pending_requests }}</h2>
+
+                    <h5>Pending Requests</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        <!-- ==========================================
+                    Request Statistics
+    =========================================== -->
+
+    <div class="row">
+
+        <!-- Approved Requests -->
+
+        <div class="col-lg-6 mb-4">
+
+            <div class="card shadow border-0 bg-info text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-check-circle fa-3x mb-3"></i>
+
+                    <h2>{{ approved_requests }}</h2>
+
+                    <h5>Approved Requests</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Rejected Requests -->
+
+        <div class="col-lg-6 mb-4">
+
+            <div class="card shadow border-0 bg-dark text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-times-circle fa-3x mb-3"></i>
+
+                    <h2>{{ rejected_requests }}</h2>
+
+                    <h5>Rejected Requests</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

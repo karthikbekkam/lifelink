@@ -1,0 +1,155 @@
+{% extends "needer/needer_base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h2 class="mb-4">
+
+        My Blood Requests
+
+    </h2>
+
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-danger text-white">
+
+            Request History
+
+        </div>
+
+        <div class="card-body">
+
+            {% if requests %}
+
+            <table class="table table-hover table-striped align-middle">
+
+                <thead class="table-danger">
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Blood Group</th>
+
+                        <th>City</th>
+
+                        <th>Message</th>
+
+                        <th>Status</th>
+
+                        <th>Date</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for request in requests %}
+
+                    <tr>
+
+                        <td>{{ request.id }}</td>
+
+                        <td>
+
+                            <span class="badge bg-danger">
+
+                                {{ request.blood_group }}
+
+                            </span>
+
+                        </td>
+
+                        <td>{{ request.city }}</td>
+
+                        <td>
+
+                            {% if request.message %}
+
+                                {{ request.message }}
+
+                            {% else %}
+
+                                <span class="text-muted">
+
+                                    No Message
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            {% if request.status == "Pending" %}
+
+                                <span class="badge bg-warning text-dark">
+
+                                    Pending
+
+                                </span>
+
+                            {% elif request.status == "Approved" %}
+
+                                <span class="badge bg-success">
+
+                                    Approved
+
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger">
+
+                                    Rejected
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            {{ request.created_at.strftime('%d-%m-%Y') }}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <div class="alert alert-info text-center">
+
+                <h4>
+
+                    No Blood Requests Found
+
+                </h4>
+
+                <p>
+
+                    You have not sent any blood requests yet.
+
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

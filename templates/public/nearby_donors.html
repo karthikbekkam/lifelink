@@ -1,0 +1,107 @@
+{% extends "needer/needer_base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="text-center text-danger fw-bold mb-5">
+        <i class="fas fa-map-marker-alt"></i>
+        Nearby Available Donors
+    </h2>
+
+    {% if donors %}
+
+    <div class="row">
+
+        {% for donor in donors %}
+
+        <div class="col-lg-4 col-md-6 mb-4">
+
+            <div class="card shadow border-0 h-100">
+
+                <div class="card-body text-center">
+
+                    {% if donor.profile_image %}
+
+                    <img src="{{ url_for('static', filename='uploads/' + donor.profile_image) }}"
+                         class="rounded-circle shadow mb-3"
+                         width="120"
+                         height="120"
+                         style="object-fit:cover;">
+
+                    {% else %}
+
+                    <img src="{{ url_for('static', filename='images/default-user.png') }}"
+                         class="rounded-circle shadow mb-3"
+                         width="120"
+                         height="120">
+
+                    {% endif %}
+
+                    <h4>{{ donor.full_name }}</h4>
+
+                    <span class="badge bg-danger mb-2">
+                        {{ donor.blood_group }}
+                    </span>
+
+                    <p>
+                        <i class="fas fa-map-marker-alt text-danger"></i>
+                        <strong>City:</strong>
+                        {{ donor.city }}
+                    </p>
+
+                    <p>
+                        <i class="fas fa-phone text-success"></i>
+                        <strong>Phone:</strong>
+                        {{ donor.phone }}
+                    </p>
+
+                    {% if donor.available %}
+
+                    <span class="badge bg-success">
+                        Available
+                    </span>
+
+                    {% else %}
+
+                    <span class="badge bg-secondary">
+                        Unavailable
+                    </span>
+
+                    {% endif %}
+
+                    <br><br>
+
+                    <a href="{{ url_for('home.request_blood', donor_id=donor.id) }}"
+                       class="btn btn-danger w-100">
+
+                        <i class="fas fa-tint"></i>
+                        Request Blood
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="alert alert-warning text-center">
+
+        <h4>No Nearby Donors Found</h4>
+
+        <p>No available donors in your area.</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

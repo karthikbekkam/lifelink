@@ -1,0 +1,1101 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- ===========================
+        Hero Section
+=========================== -->
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <h1>
+
+                    Donate Blood
+
+                    <br>
+
+                    Save Lives
+
+                </h1>
+
+                <p>
+
+                    Connecting blood donors with patients instantly.
+
+                </p>
+
+                <a href="{{ url_for('auth.register') }}"
+                   class="btn btn-danger btn-lg">
+
+                    Become Donor
+
+                </a>
+
+                <a href="{{ url_for('auth.register') }}"
+                   class="btn btn-outline-danger btn-lg ms-2">
+
+                    Find Blood
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=700"
+                    class="img-fluid rounded"
+                    alt="Blood Donation">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        Statistics Section
+=========================== -->
+
+<section class="stats py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                LifeLink in Numbers
+
+            </h2>
+
+            <p class="text-muted">
+
+                Every donation brings hope to someone in need.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+
+                <div class="card stats-card text-center">
+
+                    <div class="card-body">
+
+                        <i class="fa-solid fa-users fa-3x text-danger mb-3"></i>
+
+                        <h2 class="counter">1500+</h2>
+
+                        <p>Registered Donors</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card stats-card text-center">
+
+                    <div class="card-body">
+
+                        <i class="fa-solid fa-droplet fa-3x text-danger mb-3"></i>
+
+                        <h2 class="counter">950+</h2>
+
+                        <p>Blood Requests</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card stats-card text-center">
+
+                    <div class="card-body">
+
+                        <i class="fa-solid fa-hospital fa-3x text-danger mb-3"></i>
+
+                        <h2 class="counter">250+</h2>
+
+                        <p>Partner Hospitals</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card stats-card text-center">
+
+                    <div class="card-body">
+
+                        <i class="fa-solid fa-truck-medical fa-3x text-danger mb-3"></i>
+
+                        <h2>24/7</h2>
+
+                        <p>Emergency Support</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+      Blood Groups Section
+=========================== -->
+
+<section id="blood" class="blood-groups py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Available Blood Groups
+
+            </h2>
+
+            <p class="text-muted">
+
+                Find the right blood group instantly.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blood-card">
+
+                    <div class="blood-icon">🩸</div>
+
+                    <h2>A+</h2>
+
+                    <p>125 Donors Available</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blood-card">
+
+                    <div class="blood-icon">🩸</div>
+
+                    <h2>A-</h2>
+
+                    <p>85 Donors Available</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blood-card">
+
+                    <div class="blood-icon">🩸</div>
+
+                    <h2>B+</h2>
+
+                    <p>98 Donors Available</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blood-card">
+
+                    <div class="blood-icon">🩸</div>
+
+                    <h2>B-</h2>
+
+                    <p>42 Donors Available</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blood-card">
+
+                    <div class="blood-icon">🩸</div>
+
+                    <h2>AB+</h2>
+
+                    <p>30 Donors Available</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blood-card">
+
+                    <div class="blood-icon">🩸</div>
+
+                    <h2>AB-</h2>
+
+                    <p>18 Donors Available</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blood-card">
+
+                    <div class="blood-icon">🩸</div>
+
+                    <h2>O+</h2>
+
+                    <p>215 Donors Available</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blood-card">
+
+                    <div class="blood-icon">🩸</div>
+
+                    <h2>O-</h2>
+
+                    <p>120 Donors Available</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ===========================
+     How LifeLink Works Section
+=========================== -->
+
+<section id="about" class="how-it-works py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                How LifeLink Works
+            </h2>
+
+            <p class="text-muted">
+                Donate blood in four simple steps and help save lives.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="work-card">
+
+                    <div class="step-circle">
+                        1
+                    </div>
+
+                    <i class="fa-solid fa-user-plus fa-3x text-danger my-3"></i>
+
+                    <h4>Register</h4>
+
+                    <p>
+                        Create your account as a Blood Donor or Blood Needer.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="work-card">
+
+                    <div class="step-circle">
+                        2
+                    </div>
+
+                    <i class="fa-solid fa-magnifying-glass fa-3x text-danger my-3"></i>
+
+                    <h4>Search Donors</h4>
+
+                    <p>
+                        Search nearby donors by blood group and location.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="work-card">
+
+                    <div class="step-circle">
+                        3
+                    </div>
+
+                    <i class="fa-solid fa-hand-holding-droplet fa-3x text-danger my-3"></i>
+
+                    <h4>Send Request</h4>
+
+                    <p>
+                        Send blood requests instantly to available donors.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="work-card">
+
+                    <div class="step-circle">
+                        4
+                    </div>
+
+                    <i class="fa-solid fa-heart-circle-check fa-3x text-danger my-3"></i>
+
+                    <h4>Save a Life</h4>
+
+                    <p>
+                        The donor accepts your request and helps save a life.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     Why Choose LifeLink
+=========================== -->
+
+<section class="why-us py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Why Choose LifeLink?
+
+            </h2>
+
+            <p class="text-muted">
+
+                A smarter and faster way to connect blood donors with patients.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-user-check fa-3x text-danger mb-3"></i>
+
+                    <h4>Verified Donors</h4>
+
+                    <p>
+                        Every donor profile is verified for authenticity.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-location-dot fa-3x text-danger mb-3"></i>
+
+                    <h4>Live Location</h4>
+
+                    <p>
+                        Find nearby donors using integrated Google Maps.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-bolt fa-3x text-danger mb-3"></i>
+
+                    <h4>Fast Emergency Response</h4>
+
+                    <p>
+                        Emergency blood requests reach donors instantly.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-hospital fa-3x text-danger mb-3"></i>
+
+                    <h4>Nearby Hospitals</h4>
+
+                    <p>
+                        Locate nearby hospitals and blood banks easily.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-shield-halved fa-3x text-danger mb-3"></i>
+
+                    <h4>Secure Platform</h4>
+
+                    <p>
+                        Your information is protected with secure authentication.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-headset fa-3x text-danger mb-3"></i>
+
+                    <h4>24×7 Support</h4>
+
+                    <p>
+                        Emergency assistance is available anytime.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     Emergency Section
+=========================== -->
+
+<section id="contact" class="emergency-section py-5 bg-danger text-white">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <h1>
+
+                    🚨 Need Blood Urgently?
+
+                </h1>
+
+                <p class="lead">
+
+                    Send an emergency blood request and connect with nearby verified donors within minutes.
+
+                </p>
+
+            </div>
+
+            <div class="col-lg-4 text-center">
+
+                <a href="{{ url_for('auth.register') }}"
+                   class="btn btn-light btn-lg">
+
+                    Request Blood Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================
+            Testimonials Section
+====================================== -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                What Our Users Say
+
+            </h2>
+
+            <p class="text-muted">
+
+                Trusted by donors and patients across the city.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Testimonial 1 -->
+
+            <div class="col-lg-4">
+
+                <div class="card border-0 shadow h-100">
+
+                    <div class="card-body text-center">
+
+                        <img
+                            src="https://randomuser.me/api/portraits/men/32.jpg"
+                            class="rounded-circle mb-3"
+                            width="100"
+                            height="100"
+                            alt="Rahul">
+
+                        <h4>
+
+                            Rahul Kumar
+
+                        </h4>
+
+                        <small class="text-muted">
+
+                            Blood Recipient
+
+                        </small>
+
+                        <div class="my-3 text-warning">
+
+                            ★★★★★
+
+                        </div>
+
+                        <p>
+
+                            LifeLink helped me find an O+ donor within
+                            20 minutes during an emergency.
+                            The platform is fast, simple and reliable.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Testimonial 2 -->
+
+            <div class="col-lg-4">
+
+                <div class="card border-0 shadow h-100">
+
+                    <div class="card-body text-center">
+
+                        <img
+                            src="https://randomuser.me/api/portraits/women/45.jpg"
+                            class="rounded-circle mb-3"
+                            width="100"
+                            height="100"
+                            alt="Priya">
+
+                        <h4>
+
+                            Priya Sharma
+
+                        </h4>
+
+                        <small class="text-muted">
+
+                            Blood Donor
+
+                        </small>
+
+                        <div class="my-3 text-warning">
+
+                            ★★★★★
+
+                        </div>
+
+                        <p>
+
+                            Registering as a donor was very easy.
+                            I could help save someone's life in just a few clicks.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Testimonial 3 -->
+
+            <div class="col-lg-4">
+
+                <div class="card border-0 shadow h-100">
+
+                    <div class="card-body text-center">
+
+                        <img
+                            src="https://randomuser.me/api/portraits/men/67.jpg"
+                            class="rounded-circle mb-3"
+                            width="100"
+                            height="100"
+                            alt="Arjun">
+
+                        <h4>
+
+                            Arjun Reddy
+
+                        </h4>
+
+                        <small class="text-muted">
+
+                            Volunteer
+
+                        </small>
+
+                        <div class="my-3 text-warning">
+
+                            ★★★★★
+
+                        </div>
+
+                        <p>
+
+                            A beautifully designed blood donation
+                            platform with an excellent user experience.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================
+            Founder Section
+====================================== -->
+
+<section class="py-5" id="founder">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Founder Image -->
+
+            <div class="col-lg-4 text-center">
+
+                <img
+                    src="{{ url_for('static', filename='images/founder.jpg') }}"
+                    class="img-fluid rounded-circle founder-img shadow"
+                    alt="Bekkam Karthik">
+
+            </div>
+
+            <!-- Founder Details -->
+
+            <div class="col-lg-8">
+
+                <h2 class="fw-bold">
+
+                    Meet the Founder
+
+                </h2>
+
+                <h4 class="text-danger">
+
+                    Bekkam Karthik
+
+                </h4>
+
+                <p class="lead">
+
+                    Full Stack Developer | B.Tech CSE Student
+
+                </p>
+
+                <p>
+
+                    I developed <strong>LifeLink</strong> with the vision of
+                    creating a smart platform that connects blood donors
+                    with patients quickly during emergencies.
+                    The goal is to make blood donation simple,
+                    accessible, and technology-driven.
+
+                </p>
+
+                <div class="row mt-4">
+
+                    <div class="col-md-6">
+
+                        <h5>Skills</h5>
+
+                        <ul>
+
+                            <li>Python & Flask</li>
+
+                            <li>HTML, CSS, Bootstrap</li>
+
+                            <li>JavaScript</li>
+
+                            <li>MySQL</li>
+
+                            <li>Machine Learning</li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <h5>Connect With Me</h5>
+
+                        <p>
+
+                            <i class="fab fa-github text-dark"></i>
+
+                            <a href="https://github.com/karthikbekkam"
+                               target="_blank">
+
+                                github.com/karthikbekkam
+
+                            </a>
+
+                        </p>
+
+                        <p>
+
+                            <i class="fab fa-linkedin text-primary"></i>
+
+                            <a href="https://www.linkedin.com/in/karthik-bekkam-103b0531a/"
+                               target="_blank">
+
+                                LinkedIn Profile
+
+                            </a>
+
+                        </p>
+
+                        <p>
+
+                            <i class="fab fa-instagram text-danger"></i>
+
+                            <a href="https://www.instagram.com/karthik__bekkam/"
+                               target="_blank">
+
+                                @karthik__bekkam
+
+                            </a>
+
+                        </p>
+
+                        <p>
+
+                            <i class="fa-solid fa-envelope text-danger"></i>
+
+                            lifelink.bloodconnect@gmail.com
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================
+                FAQ Section
+====================================== -->
+
+<section class="py-5 bg-light" id="faq">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Frequently Asked Questions
+
+            </h2>
+
+            <p class="text-muted">
+
+                Everything you need to know about LifeLink.
+
+            </p>
+
+        </div>
+
+        <div class="accordion shadow" id="faqAccordion">
+
+            <!-- FAQ 1 -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1">
+
+                        Who can donate blood?
+
+                    </button>
+
+                </h2>
+
+                <div
+                    id="faq1"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Any healthy person between 18 and 65 years of age
+                        who meets the basic health requirements can donate blood.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 2 -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq2">
+
+                        How often can I donate blood?
+
+                    </button>
+
+                </h2>
+
+                <div
+                    id="faq2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Most healthy adults can donate whole blood every
+                        3 months, depending on local medical guidelines.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 3 -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq3">
+
+                        Is registration free?
+
+                    </button>
+
+                </h2>
+
+                <div
+                    id="faq3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Yes.
+                        LifeLink is completely free for both donors and recipients.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 4 -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq4">
+
+                        How does LifeLink work?
+
+                    </button>
+
+                </h2>
+
+                <div
+                    id="faq4"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Register as a donor or recipient,
+                        search for nearby donors,
+                        send blood requests,
+                        and connect instantly during emergencies.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 5 -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq5">
+
+                        Is my personal information safe?
+
+                    </button>
+
+                </h2>
+
+                <div
+                    id="faq5"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Yes.
+                        We protect user information using secure authentication
+                        and encrypted password storage.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

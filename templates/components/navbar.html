@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-sm">
+
+    <div class="container">
+
+        <!-- Logo -->
+
+        <a class="navbar-brand fw-bold"
+           href="{{ url_for('home.home') }}">
+
+            🩸 LifeLink
+
+        </a>
+
+        <!-- Mobile Menu Button -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <!-- Navbar Menu -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-center">
+
+                <!-- Home -->
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="{{ url_for('home.home') }}">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <!-- About -->
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="{{ url_for('home.about') }}">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <!-- Blood Groups -->
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="{{ url_for('home.home') }}#blood">
+
+                        Blood Groups
+
+                    </a>
+
+                </li>
+
+                <!-- Contact -->
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="{{ url_for('home.contact') }}">
+
+                        Contact
+
+                    </a>
+
+                </li>
+               
+
+</li>
+
+
+                <!-- Register -->
+
+                <li class="nav-item ms-2">
+
+                    <a
+                        class="btn btn-outline-light"
+
+                        href="{{ url_for('auth.register') }}">
+
+                        Register
+
+                    </a>
+
+                </li>
+
+
+                <!-- Login -->
+
+                <li class="nav-item ms-2">
+
+                    <a
+                        class="btn btn-light text-danger fw-bold"
+
+                        href="{{ url_for('auth.login') }}">
+
+                        Login
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+    
+
+</nav>

@@ -1,0 +1,217 @@
+{% extends "donor/donor_base.html" %}
+
+{% block content %}
+
+<div class="container-fluid py-4">
+
+    <!-- ==========================================
+                    Profile Header
+    =========================================== -->
+
+    <div class="row align-items-center mb-5">
+
+        <!-- Profile Image -->
+
+        <div class="col-lg-3 col-md-4 text-center">
+
+            {% if current_user.profile_image %}
+
+            <img
+                src="{{ url_for('static', filename='uploads/' + current_user.profile_image) }}"
+                class="rounded-circle shadow"
+                alt="Profile"
+                style="
+                    width:170px;
+                    height:170px;
+                    object-fit:cover;
+                    border:5px solid white;
+                ">
+
+            {% else %}
+
+            <img
+                src="{{ url_for('static', filename='images/default-user.png') }}"
+                class="rounded-circle shadow"
+                alt="Profile"
+                style="
+                    width:170px;
+                    height:170px;
+                    object-fit:cover;
+                    border:5px solid white;
+                ">
+
+            {% endif %}
+
+        </div>
+
+        <!-- Welcome Text -->
+
+        <div class="col-lg-9 col-md-8">
+
+            <div class="ps-lg-5">
+
+                <h1 class="fw-bold mb-2">
+
+                    Welcome {{ current_user.full_name }}
+
+                </h1>
+
+                <h4 class="text-secondary mb-3">
+
+                    Blood Donor Dashboard
+
+                </h4>
+
+                <p class="text-muted">
+
+                    Thank you for being a life saver ❤️
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    Statistics
+    =========================================== -->
+
+    <div class="row">
+
+        <!-- Total Requests -->
+
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <div class="card shadow border-0 bg-danger text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-tint fa-3x mb-3"></i>
+
+                    <h2>{{ total_requests }}</h2>
+
+                    <h5>Total Requests</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Pending -->
+
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <div class="card shadow border-0 bg-warning text-dark">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-clock fa-3x mb-3"></i>
+
+                    <h2>{{ pending_requests }}</h2>
+
+                    <h5>Pending</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Approved -->
+
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <div class="card shadow border-0 bg-success text-white">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-check-circle fa-3x mb-3"></i>
+
+                    <h2>{{ approved_requests }}</h2>
+
+                    <h5>Approved</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Availability -->
+
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <div class="card shadow border-0 bg-primary text-white">
+
+                <div class="card-body text-center">
+
+                    {% if current_user.available %}
+
+                        <i class="fas fa-heart fa-3x mb-3"></i>
+
+                        <h3 class="mb-3">
+
+                            Available
+
+                        </h3>
+
+                        <span class="badge bg-light text-success mb-3">
+
+                            Ready to Donate
+
+                        </span>
+
+                        <br><br>
+
+                        <a href="{{ url_for('donor.toggle_availability') }}"
+                           class="btn btn-danger">
+
+                            <i class="fas fa-toggle-off"></i>
+
+                            Go Offline
+
+                        </a>
+
+                    {% else %}
+
+                        <i class="fas fa-heart-broken fa-3x mb-3"></i>
+
+                        <h3 class="mb-3">
+
+                            Unavailable
+
+                        </h3>
+
+                        <span class="badge bg-light text-danger mb-3">
+
+                            Not Available
+
+                        </span>
+
+                        <br><br>
+
+                        <a href="{{ url_for('donor.toggle_availability') }}"
+                           class="btn btn-success">
+
+                            <i class="fas fa-toggle-on"></i>
+
+                            Go Online
+
+                        </a>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

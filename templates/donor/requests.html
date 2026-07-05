@@ -1,0 +1,197 @@
+{% extends "donor/donor_base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h2 class="mb-4">
+        Blood Requests
+    </h2>
+
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-danger text-white">
+            Requests Received
+        </div>
+
+        <div class="card-body">
+
+            {% if requests %}
+
+            <table class="table table-hover table-striped align-middle">
+
+                <thead class="table-danger">
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Requester Name</th>
+
+                        <th>Phone</th>
+
+                        <th>Blood Group</th>
+
+                        <th>City</th>
+
+                        <th>Message</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for request in requests %}
+
+                    <tr>
+
+                        <td>{{ request.id }}</td>
+
+                        <td>{{ request.requester_name }}</td>
+
+                        <td>{{ request.requester_phone }}</td>
+
+                        <td>
+
+                            <span class="badge bg-danger">
+                                {{ request.blood_group }}
+                            </span>
+
+                        </td>
+
+                        <td>{{ request.city }}</td>
+
+                        <td>
+
+                            {% if request.message %}
+
+                                {{ request.message }}
+
+                            {% else %}
+
+                                <span class="text-muted">
+
+                                    No Message
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            {% if request.status == "Pending" %}
+
+                                <span class="badge bg-warning text-dark">
+
+                                    Pending
+
+                                </span>
+
+                            {% elif request.status == "Approved" %}
+
+                                <span class="badge bg-success">
+
+                                    Approved
+
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger">
+
+                                    Rejected
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            {% if request.status == "Pending" %}
+
+                                <a href="{{ url_for('donor.accept_request', request_id=request.id) }}"
+                                   class="btn btn-success btn-sm me-2">
+
+                                    <i class="fas fa-check"></i>
+
+                                    Accept
+
+                                </a>
+
+                                <a href="{{ url_for('donor.reject_request', request_id=request.id) }}"
+                                   class="btn btn-danger btn-sm">
+
+                                    <i class="fas fa-times"></i>
+
+                                    Reject
+
+                                </a>
+
+                            {% elif request.status == "Approved" %}
+
+                                <span class="text-success fw-bold">
+
+                                    <i class="fas fa-check-circle"></i>
+
+                                    Accepted
+
+                                </span>
+
+                            {% else %}
+
+                                <span class="text-danger fw-bold">
+
+                                    <i class="fas fa-times-circle"></i>
+
+                                    Rejected
+
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <div class="alert alert-info text-center">
+
+                <h5>
+
+                    No Blood Requests Found
+
+                </h5>
+
+                <p>
+
+                    You have not received any blood requests yet.
+
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+Contact Messages
+
+</h2>
+
+<table class="table table-bordered">
+
+<thead class="table-danger">
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Subject</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for contact in contacts %}
+
+<tr>
+
+<td>{{ contact.full_name }}</td>
+
+<td>{{ contact.email }}</td>
+
+<td>{{ contact.subject }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

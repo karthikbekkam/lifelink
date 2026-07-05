@@ -1,0 +1,79 @@
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+
+<h2>
+
+Reports
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-3">
+
+<div class="card bg-primary text-white">
+
+<div class="card-body">
+
+<h1>{{ total_users }}</h1>
+
+Users
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-success text-white">
+
+<div class="card-body">
+
+<h1>{{ total_donors }}</h1>
+
+Donors
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-warning">
+
+<div class="card-body">
+
+<h1>{{ total_needers }}</h1>
+
+Needers
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-danger text-white">
+
+<div class="card-body">
+
+<h1>{{ total_requests }}</h1>
+
+Requests
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

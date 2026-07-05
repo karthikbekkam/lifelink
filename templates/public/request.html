@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-7">
+
+            <div class="card shadow border-0 rounded-4">
+
+                <div class="card-header bg-danger text-white text-center">
+
+                    <h3>
+
+                        🩸 Blood Request Form
+
+                    </h3>
+
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form method="POST">
+
+                        {{ form.hidden_tag() }}
+
+                        <!-- Patient Name -->
+
+                        <div class="mb-3">
+
+                            {{ form.requester_name.label(class="form-label fw-bold") }}
+
+                            {{ form.requester_name(
+                                class="form-control",
+                                placeholder="Enter Patient Name"
+                            ) }}
+
+                        </div>
+
+                        <!-- Email -->
+
+                        <div class="mb-3">
+
+                            {{ form.requester_email.label(class="form-label fw-bold") }}
+
+                            {{ form.requester_email(
+                                class="form-control",
+                                placeholder="Enter Email Address"
+                            ) }}
+
+                        </div>
+
+                        <!-- Phone -->
+
+                        <div class="mb-3">
+
+                            {{ form.requester_phone.label(class="form-label fw-bold") }}
+
+                            {{ form.requester_phone(
+                                class="form-control",
+                                placeholder="Enter Phone Number"
+                            ) }}
+
+                        </div>
+
+                        <!-- Blood Group -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+
+                                Blood Group
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                value="{{ donor.blood_group }}"
+                                readonly>
+
+                        </div>
+
+                        <!-- City -->
+
+                        <div class="mb-3">
+
+                            {{ form.city.label(class="form-label fw-bold") }}
+
+                            {{ form.city(
+                                class="form-control",
+                                placeholder="Enter City"
+                            ) }}
+
+                        </div>
+
+                        <!-- Message -->
+
+                        <div class="mb-3">
+
+                            {{ form.message.label(class="form-label fw-bold") }}
+
+                            {{ form.message(
+                                class="form-control",
+                                rows="4",
+                                placeholder="Describe the emergency (optional)"
+                            ) }}
+
+                        </div>
+
+                        <!-- Donor Information -->
+
+                        <div class="alert alert-info">
+
+                            <h5>
+
+                                Selected Donor
+
+                            </h5>
+
+                            <hr>
+
+                            <p>
+
+                                <strong>Name :</strong>
+
+                                {{ donor.full_name }}
+
+                            </p>
+
+                            <p>
+
+                                <strong>Blood Group :</strong>
+
+                                {{ donor.blood_group }}
+
+                            </p>
+
+                            <p>
+
+                                <strong>City :</strong>
+
+                                {{ donor.city }}
+
+                            </p>
+
+                        </div>
+
+                        <!-- Submit -->
+
+                        <div class="d-grid">
+
+                            {{ form.submit(class="btn btn-danger btn-lg") }}
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

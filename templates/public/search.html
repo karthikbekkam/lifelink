@@ -1,0 +1,161 @@
+{% extends "needer/needer_base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="text-center text-danger fw-bold mb-5">
+        <i class="fas fa-search"></i>
+        Search Blood Donors
+    </h2>
+
+    <!-- Search Form -->
+    <div class="card shadow-lg border-0 rounded-4">
+
+        <div class="card-body p-4">
+
+            <form method="POST">
+
+                {{ form.hidden_tag() }}
+
+                <div class="row align-items-end">
+
+                    <div class="col-md-4 mb-3">
+
+                        {{ form.blood_group.label(class="form-label fw-bold") }}
+
+                        {{ form.blood_group(class="form-select") }}
+
+                    </div>
+
+                    <div class="col-md-5 mb-3">
+
+                        {{ form.city.label(class="form-label fw-bold") }}
+
+                        {{ form.city(class="form-control", placeholder="Enter City") }}
+
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+
+                        {{ form.submit(class="btn btn-danger w-100") }}
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Search Results -->
+
+    {% if donors is not none %}
+
+        {% if donors %}
+
+        <div class="row">
+
+            {% for donor in donors %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card shadow border-0 h-100">
+
+                    <div class="card-body text-center">
+
+                        {% if donor.profile_image %}
+
+                        <img
+                            src="{{ url_for('static', filename='uploads/' + donor.profile_image) }}"
+                            class="rounded-circle shadow mb-3"
+                            width="120"
+                            height="120"
+                            style="object-fit:cover;">
+
+                        {% else %}
+
+                        <img
+                            src="{{ url_for('static', filename='images/default-user.png') }}"
+                            class="rounded-circle shadow mb-3"
+                            width="120"
+                            height="120">
+
+                        {% endif %}
+
+                        <h4>{{ donor.full_name }}</h4>
+
+                        <span class="badge bg-danger mb-2">
+
+                            {{ donor.blood_group }}
+
+                        </span>
+
+                        <p>
+
+                            <i class="fas fa-map-marker-alt text-danger"></i>
+
+                            {{ donor.city }}
+
+                        </p>
+
+                        <p>
+
+                            <i class="fas fa-phone text-success"></i>
+
+                            {{ donor.phone }}
+
+                        </p>
+
+                        {% if donor.available %}
+
+                        <span class="badge bg-success">
+
+                            Available
+
+                        </span>
+
+                        {% endif %}
+
+                        <br><br>
+
+                        <a href="{{ url_for('home.request_blood', donor_id=donor.id) }}"
+                           class="btn btn-danger w-100">
+
+                            <i class="fas fa-tint"></i>
+
+                            Request Blood
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-warning text-center shadow">
+
+            <h3>No Donors Found</h3>
+
+            <p>Try another Blood Group or City.</p>
+
+        </div>
+
+        {% endif %}
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

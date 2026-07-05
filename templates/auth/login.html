@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-5">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-danger text-white text-center">
+
+                    <h2>
+
+                        🩸 LifeLink Login
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Welcome Back
+
+                    </p>
+
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form method="POST">
+
+                        {{ form.hidden_tag() }}
+
+                        <!-- Email -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+
+                                Email Address
+
+                            </label>
+
+                            {{ form.email(
+
+                                class="form-control",
+
+                                placeholder="Enter your Email"
+
+                            ) }}
+
+                        </div>
+
+                        <!-- Password -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+
+                                Password
+
+                            </label>
+
+                            {{ form.password(
+
+                                class="form-control",
+
+                                placeholder="Enter your Password"
+
+                            ) }}
+
+                        </div>
+
+                        <!-- Remember Me -->
+
+                        <div class="form-check mb-2">
+
+                            {{ form.remember(class="form-check-input") }}
+
+                            {{ form.remember.label(class="form-check-label") }}
+
+                        </div>
+
+                        <!-- Forgot Password -->
+
+                        <div class="text-end mb-3">
+
+                            <a
+
+                                href="{{ url_for('auth.forgot_password') }}"
+
+                                class="text-danger text-decoration-none fw-bold">
+
+                                Forgot Password?
+
+                            </a>
+
+                        </div>
+
+                        <!-- Login -->
+
+                        <div class="d-grid">
+
+                            {{ form.submit(
+
+                                class="btn btn-danger btn-lg"
+
+                            ) }}
+
+                        </div>
+
+                    </form>
+
+                    <hr>
+
+                    <div class="text-center">
+
+                        <p class="mb-0">
+
+                            Don't have an account?
+
+                            <a
+
+                                href="{{ url_for('auth.register') }}"
+
+                                class="fw-bold text-danger">
+
+                                Register Here
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends "needer/needer_base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="text-center text-danger fw-bold mb-5">
+
+        <i class="fas fa-hospital"></i>
+
+        Nearby Hospitals
+
+    </h2>
+
+    {% if hospitals %}
+
+    <div class="row">
+
+        {% for hospital in hospitals %}
+
+        <div class="col-lg-6 mb-4">
+
+            <div class="card shadow border-0 h-100">
+
+                <div class="card-body">
+
+                    <h4 class="text-danger">
+
+                        <i class="fas fa-hospital"></i>
+
+                        {{ hospital.name }}
+
+                    </h4>
+
+                    <hr>
+
+                    <p>
+
+                        <strong>City :</strong>
+
+                        {{ city }}
+
+                    </p>
+
+                    <p>
+
+                        <strong>Address :</strong>
+
+                        {{ hospital.address }}
+
+                    </p>
+
+                    <p>
+
+                        <strong>Phone :</strong>
+
+                        {{ hospital.phone }}
+
+                    </p>
+
+                    <a href="{{ hospital.map }}"
+                       target="_blank"
+                       class="btn btn-primary">
+
+                        <i class="fas fa-map-marker-alt"></i>
+
+                        Open Map
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="alert alert-warning text-center">
+
+        <h4>No Hospitals Found</h4>
+
+        <p>
+
+            No hospital information is available for
+
+            <strong>{{ city }}</strong>.
+
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

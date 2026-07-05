@@ -1,0 +1,160 @@
+{% extends "needer/needer_base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="text-center text-danger fw-bold mb-5">
+        Search Blood Donors
+    </h2>
+
+    <!-- Search Form -->
+
+    <div class="card shadow border-0 mb-5">
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                {{ form.hidden_tag() }}
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+
+                        {{ form.blood_group.label(class="form-label") }}
+
+                        {{ form.blood_group(class="form-select") }}
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+
+                        {{ form.city.label(class="form-label") }}
+
+                        {{ form.city(class="form-control") }}
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+
+                        {{ form.state.label(class="form-label") }}
+
+                        {{ form.state(class="form-control") }}
+
+                    </div>
+
+                </div>
+
+                <div class="text-center">
+
+                    {{ form.submit(class="btn btn-danger btn-lg px-5") }}
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Search Results -->
+
+    {% if donors is not none and donors %}
+
+    <div class="row">
+
+        {% for donor in donors %}
+
+        <div class="col-lg-4 mb-4">
+
+            <div class="card shadow border-0 h-100">
+
+                <div class="card-body text-center">
+
+                    <img
+                        src="{{ url_for('static', filename='uploads/' + donor.profile_image) }}"
+                        class="rounded-circle mb-3"
+                        width="120"
+                        height="120"
+                        style="object-fit:cover;">
+
+                    <h4>{{ donor.full_name }}</h4>
+
+                    <span class="badge bg-danger mb-2">
+
+                        {{ donor.blood_group }}
+
+                    </span>
+
+                    <p>
+
+                        <strong>City :</strong>
+
+                        {{ donor.city }}
+
+                    </p>
+
+                    <p>
+
+                        <strong>State :</strong>
+
+                        {{ donor.state }}
+
+                    </p>
+
+                    {% if donor.available %}
+
+                        <span class="badge bg-success mb-3">
+
+                            Available
+
+                        </span>
+
+                    {% else %}
+
+                        <span class="badge bg-secondary mb-3">
+
+                            Unavailable
+
+                        </span>
+
+                    {% endif %}
+
+                    <br>
+
+                    <a href="{{ url_for('home.request_blood', donor_id=donor.id) }}"
+                       class="btn btn-danger">
+
+                        Request Blood
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+{% elif donors is not none %}
+  
+    <div class="alert alert-warning text-center">
+
+        <h3>No Donors Found</h3>
+
+        <p>
+
+            Try another Blood Group or City.
+
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

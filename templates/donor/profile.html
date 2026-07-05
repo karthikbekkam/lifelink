@@ -1,0 +1,116 @@
+{% extends "donor/donor_base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow border-0">
+
+                <div class="card-header bg-danger text-white">
+
+                    <h3>
+
+                        <i class="fas fa-user-edit"></i>
+
+                        Edit Profile
+
+                    </h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+
+                        {{ form.hidden_tag() }}
+
+                        <div class="text-center mb-4">
+
+                            <img
+                                src="{{ url_for('static', filename='uploads/' + current_user.profile_image) }}"
+                                class="rounded-circle border"
+                                width="150"
+                                height="150"
+                                alt="Profile Image">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            {{ form.profile_image.label(class="form-label fw-bold") }}
+
+                            {{ form.profile_image(class="form-control") }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            {{ form.full_name.label(class="form-label fw-bold") }}
+
+                            {{ form.full_name(class="form-control") }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            {{ form.phone.label(class="form-label fw-bold") }}
+
+                            {{ form.phone(class="form-control") }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            {{ form.city.label(class="form-label fw-bold") }}
+
+                            {{ form.city(class="form-control") }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            {{ form.state.label(class="form-label fw-bold") }}
+
+                            {{ form.state(class="form-control") }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            {{ form.address.label(class="form-label fw-bold") }}
+
+                            {{ form.address(class="form-control") }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            {{ form.pincode.label(class="form-label fw-bold") }}
+
+                            {{ form.pincode(class="form-control") }}
+
+                        </div>
+
+                        <div class="d-grid">
+
+                            {{ form.submit(class="btn btn-danger btn-lg") }}
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
